@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { container, item } from "../animation";
 
 export default function Home() {
   return (
@@ -21,16 +22,33 @@ export default function Home() {
         </motion.h1>
       </div>
       <div className="flex justify-between">
-        <div>
+        <div className="text-xl">
           <h2>Design</h2>
           <h2>Company</h2>
           <h2>2023</h2>
         </div>
-        <div>
-          <h3>This pickle gonna make you smile.</h3>
-          <h3>Scottish designs to make you happy.</h3>
-          <h3>Click contact for cool transtition</h3>
-        </div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="text-xl space-y-2"
+        >
+          <div className="overflow-hidden">
+            <motion.h3 variants={item}>
+              This pickle gonna make you smile.
+            </motion.h3>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h3 variants={item}>
+              Scottish designs to make you happy.
+            </motion.h3>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h3 variants={item}>
+              Click contact for cool transtition
+            </motion.h3>
+          </div>
+        </motion.div>
       </div>
     </motion.main>
   );
